@@ -1,24 +1,26 @@
 // See README.md for license details.
 
-ThisBuild / scalaVersion     := "2.13.12"
-ThisBuild / version          := "0.1.0"
-ThisBuild / organization     := "com.github.whatacotton"
-
-val chiselVersion = "6.2.0"
+ThisBuild / scalaVersion := "2.13.8"
+ThisBuild / version := "0.1.0"
+ThisBuild / organization := "%ORGANIZATION%"
 
 lazy val root = (project in file("."))
   .settings(
-    name := "chisel-playground",
+    name := "riscv_chisel_book",
     libraryDependencies ++= Seq(
-      "org.chipsalliance" %% "chisel" % chiselVersion,
-      "org.scalatest" %% "scalatest" % "3.2.16" % "test",
+      "edu.berkeley.cs" %% "chisel3" % "3.5.4",
+      "edu.berkeley.cs" %% "chiseltest" % "0.5.4" % "test"
     ),
     scalacOptions ++= Seq(
+      "-Xsource:2.13",
       "-language:reflectiveCalls",
       "-deprecation",
       "-feature",
       "-Xcheckinit",
-      "-Ymacro-annotations",
+      "-P:chiselplugin:useBundlePlugin",
+      "-Ymacro-annotations"
     ),
-    addCompilerPlugin("org.chipsalliance" % "chisel-plugin" % chiselVersion cross CrossVersion.full),
+    addCompilerPlugin(
+      "edu.berkeley.cs" % "chisel3-plugin" % "3.5.4" cross CrossVersion.full
+    )
   )
