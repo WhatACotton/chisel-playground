@@ -18,10 +18,10 @@
         "classpath": [
             "/root/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/sbt/1.9.7/sbt-1.9.7.jar",
             "/root/.sbt/boot/scala-2.12.18/lib/scala-library.jar",
-            "/root/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/sbt-bloop_2.12_1.0/1.5.17/sbt-bloop_2.12_1.0-1.5.17.jar",
+            "/root/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/sbt-bloop_2.12_1.0/1.5.18/sbt-bloop_2.12_1.0-1.5.18.jar",
             "/root/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/main_2.12/1.9.7/main_2.12-1.9.7.jar",
             "/root/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/io_2.12/1.9.7/io_2.12-1.9.7.jar",
-            "/root/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/bloop-config_2.12/1.5.5/bloop-config_2.12-1.5.5.jar",
+            "/root/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/bloop-config_2.12/2.0.0/bloop-config_2.12-2.0.0.jar",
             "/root/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/logic_2.12/1.9.7/logic_2.12-1.9.7.jar",
             "/root/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/actions_2.12/1.9.7/actions_2.12-1.9.7.jar",
             "/root/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/main-settings_2.12/1.9.7/main-settings_2.12-1.9.7.jar",
@@ -228,8 +228,8 @@
             },
             "classpath": [
                 "/home/cotton/code/whatacotton/chisel-playground/project/.bloop/chisel-playground-build/scala-2.12/sbt-1.0/classes",
-                "/root/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/sbt-bloop_2.12_1.0/1.5.17/sbt-bloop_2.12_1.0-1.5.17.jar",
-                "/root/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/bloop-config_2.12/1.5.5/bloop-config_2.12-1.5.5.jar",
+                "/root/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/sbt-bloop_2.12_1.0/1.5.18/sbt-bloop_2.12_1.0-1.5.18.jar",
+                "/root/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/bloop-config_2.12/2.0.0/bloop-config_2.12-2.0.0.jar",
                 "/root/.cache/coursier/v1/https/repo1.maven.org/maven2/com/github/plokhotnyuk/jsoniter-scala/jsoniter-scala-core_2.12/2.4.0/jsoniter-scala-core_2.12-2.4.0.jar",
                 "/root/.sbt/boot/scala-2.12.18/lib/scala-library.jar"
             ]
@@ -239,34 +239,34 @@
                 {
                     "organization": "ch.epfl.scala",
                     "name": "sbt-bloop",
-                    "version": "1.5.17",
+                    "version": "1.5.18",
                     "configurations": "default",
                     "artifacts": [
                         {
                             "name": "sbt-bloop",
-                            "path": "/root/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/sbt-bloop_2.12_1.0/1.5.17/sbt-bloop_2.12_1.0-1.5.17.jar"
+                            "path": "/root/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/sbt-bloop_2.12_1.0/1.5.18/sbt-bloop_2.12_1.0-1.5.18.jar"
                         },
                         {
                             "name": "sbt-bloop",
                             "classifier": "sources",
-                            "path": "/home/cotton/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/sbt-bloop_2.12_1.0/1.5.17/sbt-bloop_2.12_1.0-1.5.17-sources.jar"
+                            "path": "/home/cotton/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/sbt-bloop_2.12_1.0/1.5.18/sbt-bloop_2.12_1.0-1.5.18-sources.jar"
                         }
                     ]
                 },
                 {
                     "organization": "ch.epfl.scala",
                     "name": "bloop-config_2.12",
-                    "version": "1.5.5",
+                    "version": "2.0.0",
                     "configurations": "default",
                     "artifacts": [
                         {
                             "name": "bloop-config_2.12",
-                            "path": "/root/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/bloop-config_2.12/1.5.5/bloop-config_2.12-1.5.5.jar"
+                            "path": "/root/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/bloop-config_2.12/2.0.0/bloop-config_2.12-2.0.0.jar"
                         },
                         {
                             "name": "bloop-config_2.12",
                             "classifier": "sources",
-                            "path": "/home/cotton/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/bloop-config_2.12/1.5.5/bloop-config_2.12-1.5.5-sources.jar"
+                            "path": "/home/cotton/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/bloop-config_2.12/2.0.0/bloop-config_2.12-2.0.0-sources.jar"
                         }
                     ]
                 },

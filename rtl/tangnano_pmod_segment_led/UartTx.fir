@@ -1,0 +1,63 @@
+circuit UartTx :
+  module UartTx :
+    input clock : Clock
+    input reset : UInt<1>
+    output io : { tx : UInt<1>}
+
+    reg rateCounter : UInt<8>, clock with :
+      reset => (reset, UInt<8>("h0")) @[uart.scala 10:28]
+    reg bitCounter : UInt<4>, clock with :
+      reset => (reset, UInt<4>("h0")) @[uart.scala 11:27]
+    reg bits : UInt<1>[10], clock with :
+      reset => (UInt<1>("h0"), bits) @[uart.scala 12:17]
+    node _io_tx_T = eq(bitCounter, UInt<1>("h0")) @[uart.scala 13:23]
+    node _io_tx_T_1 = or(_io_tx_T, bits[0]) @[uart.scala 13:31]
+    io.tx <= _io_tx_T_1 @[uart.scala 13:9]
+    node ready = eq(bitCounter, UInt<1>("h0")) @[uart.scala 14:26]
+    when ready : @[uart.scala 15:15]
+      node hi = cat(UInt<1>("h1"), UInt<8>("h41")) @[Cat.scala 33:92]
+      node _T = cat(hi, UInt<1>("h0")) @[Cat.scala 33:92]
+      node _T_1 = bits(_T, 0, 0) @[uart.scala 16:40]
+      node _T_2 = bits(_T, 1, 1) @[uart.scala 16:40]
+      node _T_3 = bits(_T, 2, 2) @[uart.scala 16:40]
+      node _T_4 = bits(_T, 3, 3) @[uart.scala 16:40]
+      node _T_5 = bits(_T, 4, 4) @[uart.scala 16:40]
+      node _T_6 = bits(_T, 5, 5) @[uart.scala 16:40]
+      node _T_7 = bits(_T, 6, 6) @[uart.scala 16:40]
+      node _T_8 = bits(_T, 7, 7) @[uart.scala 16:40]
+      node _T_9 = bits(_T, 8, 8) @[uart.scala 16:40]
+      node _T_10 = bits(_T, 9, 9) @[uart.scala 16:40]
+      bits[0] <= _T_1 @[uart.scala 16:10]
+      bits[1] <= _T_2 @[uart.scala 16:10]
+      bits[2] <= _T_3 @[uart.scala 16:10]
+      bits[3] <= _T_4 @[uart.scala 16:10]
+      bits[4] <= _T_5 @[uart.scala 16:10]
+      bits[5] <= _T_6 @[uart.scala 16:10]
+      bits[6] <= _T_7 @[uart.scala 16:10]
+      bits[7] <= _T_8 @[uart.scala 16:10]
+      bits[8] <= _T_9 @[uart.scala 16:10]
+      bits[9] <= _T_10 @[uart.scala 16:10]
+      bitCounter <= UInt<4>("ha") @[uart.scala 17:16]
+      rateCounter <= UInt<8>("he9") @[uart.scala 18:17]
+    node _T_11 = gt(bitCounter, UInt<1>("h0")) @[uart.scala 20:19]
+    when _T_11 : @[uart.scala 20:26]
+      node _T_12 = eq(rateCounter, UInt<1>("h0")) @[uart.scala 21:22]
+      when _T_12 : @[uart.scala 21:31]
+        bits[0] <= bits[1] @[uart.scala 22:37]
+        bits[1] <= bits[2] @[uart.scala 22:37]
+        bits[2] <= bits[3] @[uart.scala 22:37]
+        bits[3] <= bits[4] @[uart.scala 22:37]
+        bits[4] <= bits[5] @[uart.scala 22:37]
+        bits[5] <= bits[6] @[uart.scala 22:37]
+        bits[6] <= bits[7] @[uart.scala 22:37]
+        bits[7] <= bits[8] @[uart.scala 22:37]
+        bits[8] <= bits[9] @[uart.scala 22:37]
+        node _bitCounter_T = sub(bitCounter, UInt<1>("h1")) @[uart.scala 23:32]
+        node _bitCounter_T_1 = tail(_bitCounter_T, 1) @[uart.scala 23:32]
+        bitCounter <= _bitCounter_T_1 @[uart.scala 23:18]
+        rateCounter <= UInt<8>("he9") @[uart.scala 24:19]
+      else :
+        node _rateCounter_T = sub(rateCounter, UInt<1>("h1")) @[uart.scala 26:34]
+        node _rateCounter_T_1 = tail(_rateCounter_T, 1) @[uart.scala 26:34]
+        rateCounter <= _rateCounter_T_1 @[uart.scala 26:19]
+
