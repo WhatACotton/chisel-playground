@@ -1,8 +1,8 @@
 // See README.md for license details.
 
-ThisBuild / scalaVersion := "2.13.8"
-ThisBuild / version := "0.1.0"
-ThisBuild / organization := "%ORGANIZATION%"
+ThisBuild / scalaVersion     := "2.13.8"
+ThisBuild / version          := "0.1.0"
+ThisBuild / organization     := "%ORGANIZATION%"
 
 lazy val root = (project in file("."))
   .settings(
@@ -20,7 +20,5 @@ lazy val root = (project in file("."))
       "-P:chiselplugin:useBundlePlugin",
       "-Ymacro-annotations"
     ),
-    addCompilerPlugin(
-      "edu.berkeley.cs" % "chisel3-plugin" % "3.5.4" cross CrossVersion.full
-    )
+    addCompilerPlugin("edu.berkeley.cs" % "chisel3-plugin" % "3.5.4" cross CrossVersion.full)
   )

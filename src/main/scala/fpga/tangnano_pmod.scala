@@ -8,11 +8,11 @@ package fpga
 
 import chisel3._
 import chisel3.stage.ChiselStage
-import Lchika.Hello
+import cpu.TopWithSegmentLed
 
 object Elaborate_TangNanoPmod_SegmentLed extends App {
   (new ChiselStage).emitVerilog(
-    new Hello,
+    new TopWithSegmentLed(),
     Array(
       "-o",
       "riscv.v",
